@@ -1,0 +1,95 @@
+{
+  "name": "thrift-web-support",
+  "version": "1.0.0",
+  "description": "thrift-web-support",
+  "publisher": "dev",
+  "categories": [
+    "Programming Languages"
+  ],
+  "main": "./dist/extension.js",
+  "browser": "./dist/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "thrift",
+        "extensions": [
+          ".thrift"
+        ],
+        "aliases": [
+          "Thrift"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "thrift",
+        "scopeName": "source.thrift",
+        "path": "./syntaxes/thrift.tmLanguage"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "thrift",
+        "path": "./snippets/thrift.json"
+      }
+    ],
+    "configurationDefaults": {
+      "[thrift]": {
+        "editor.suggestSelection": "first"
+      }
+    },
+    "keybindings": [
+      {
+        "key": "cmd+s",
+        "command": "editor.action.formatDocument"
+      },
+      {
+        "key": "ctrl + s",
+        "command": "editor.action.formatDocument"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "webpack --watch",
+    "dev": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. ."
+  },
+  "keywords": [
+    "vscode",
+    "extension",
+    "javascript",
+    "typescript",
+    "code snippets",
+    "thrift"
+  ],
+  "engines": {
+    "vscode": "^1.78.2"
+  },
+  "activationEvents": [
+    "onLanguage:thrift"
+  ],
+  "author": "miziha-l@foxmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/vscode": "^1.78.2",
+    "@vscode/test-web": "^0.0.58",
+    "path-browserify": "^1.0.1",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.6.2",
+    "webpack": "^5.90.1",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "assert": "^2.0.0",
+    "p-limit": "^6.1.0",
+    "process": "^0.11.10",
+    "thrift-fmt-ts": "^1.3.0",
+    "upath": "^2.0.1",
+    "util": "^0.12.4",
+    "vscode-languageclient": "~8.1.0",
+    "vscode-languageserver": "~8.1.0",
+    "vscode-languageserver-protocol": "~3.17.3",
+    "vscode-languageserver-textdocument": "~1.0.8",
+    "vscode-uri": "^3.0.8"
+  }
+}
