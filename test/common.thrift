@@ -45,7 +45,7 @@ struct UrlStruct {
 	7: optional string FileHash,
 	8: optional string FileCs,
 	9: optional string PlayerAccessKey,
-	10: optional string SecretKey,
+	10: optional string UrlStruct,
 	11: optional CompressedUrlList CompressedUrlList,
 }
 
